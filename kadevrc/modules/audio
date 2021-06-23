@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# --- PULSE AUDIO SETUP --- #
+alias set-phone='pactl set-sink-port 0 analog-output-headphones'
+alias set-speaker='pactl set-sink-port 0 analog-output-speaker'
+
+mic_on() {
+    pactl load-module module-loopback latency_msec=1
+}
+
+mic_off() {
+    pactl unload-module module-loopback
+}
+

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# --- LAPTOP UNIX KEYBOARD REMAP --- #
+# --- similar experience with 60% keyboards --- #
+alias kmap-xps='setxkbmap -layout us -variant alt-intl && xmodmap ~/kadev/keyboard-mappers/XPS.Xmodmap'
+alias kmap-ck62='setxkbmap -layout us -variant alt-intl && xmodmap ~/kadev/keyboard-mappers/ck62.Xmodmap'
+

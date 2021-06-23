@@ -1,0 +1,11 @@
+{
+  "eslint.autoFixOnSave": false,
+  "eslint.autoFix": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "javascript",
+    "json",
+    "graphql"
+  ],
+  "javascript.suggestionActions.enabled": false
+}

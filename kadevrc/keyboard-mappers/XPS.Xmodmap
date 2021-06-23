@@ -1,0 +1,38 @@
+! --- INTENTION --- !
+! this is script intends to normalize our keyboard use with a hybrid setup
+! really close to one another - on native laptop keyboards we will try to
+! emulate the modifier on the numbers row, enabling number functions SymKeys
+! and switching '`~' to 'esc' and adding the 'delete'key to the backspace
+! when pressed with our custom modifier
+!
+! --- modifier setup --- !
+clear lock
+clear mod5
+add mod5 = Mode_switch
+keycode 66 = Mode_switch
+! --- modifier setup --- !
+!
+! using the modifier setup above we can map the 3rd and 4th argument when mapping keys
+! keycode <keycode> = regular Shift Mode_switch Mode_switch+Shift
+!
+! --- mapping numbers keyboard row --- !
+
+!esc, grave tilde previous setup
+!keycode  49 = dead_grave dead_tilde grave asciitilde grave asciitilde
+!keycode   9 = Escape NoSymbol Escape
+
+keycode  48 = dead_acute dead_diaeresis apostrophe quotedbl apostrophe quotedbl
+keycode  49 = Escape Escape dead_grave dead_tilde
+keycode  10 = 1 exclam F1
+keycode  11 = 2 at F2
+keycode  12 = 3 numbersign F3
+keycode  13 = 4 dollar F4
+keycode  14 = 5 percent F5
+keycode  15 = 6 dead_circumflex F6
+keycode  16 = 7 ampersand F7
+keycode  17 = 8 asterisk F8
+keycode  18 = 9 parenleft F9
+keycode  19 = 0 parenright F10
+keycode  20 = minus underscore F11
+keycode  21 = equal plus F12
+keycode  22 = BackSpace BackSpace Delete

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+### LOAD MODULES ###
+source ~/kadevrc/modules/bashcommands
+source ~/kadevrc/modules/git
+source ~/kadevrc/modules/audio
+source ~/kadevrc/modules/pomodoro
+source ~/kadevrc/modules/keyboard
+source ~/kadevrc/modules/docker
+source ~/kadevrc/modules/vimcommands
+source ~/kadevrc/modules/tmux
+source ~/kadevrc/modules/desktop

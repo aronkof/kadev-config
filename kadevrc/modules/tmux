@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+function tmux-ns() {
+    if [ -z "$1" ]; then
+        TITLE="$1"
+    else
+        TITLE="untitled"
+    fi
+
+    tmux new-session -s $1
+}
+
+function tmux-s() {
+    if [ -z "$1" ]; then
+        TITLE="$1"
+    else
+        TITLE="untitled"
+    fi
+
+    tmux new-session -d -s $1
+}
+
+alias tmux-k='tmux kill-server'
+alias reload_tmux='tmux source-file ~/.tmux.conf'

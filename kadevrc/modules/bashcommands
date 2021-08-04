@@ -6,32 +6,8 @@ alias ll='ls -al --color=auto'
 alias l='ls -a1 --group-directories-first'
 alias c='clear'
 
-alias reload_bash='source ~/.bashrc'
-
+alias rbash='source ~/.bashrc'
 alias bashcfg='vim ~/kadevrc/'
-
+alias kubecfg='vim ~/.kube/config'
 alias icopy='xclip -selection c -rmlastnl'
-
-function set-title() {
-  if [[ -z "$ORIG" ]]; then
-    ORIG=$PS1
-  fi
-  TITLE="\[\e]2;$*\a\]"
-  PS1=${ORIG}${TITLE}
-}
-
-function pods() {
-  [ "$1" = on ] && bluetoothctl -- connect 7C:9A:1D:D5:2C:91
-  [ "$1" = off ] && bluetoothctl -- disconnect 7C:9A:1D:D5:2C:91
-}
-
-function gm4() {
-  [ "$1" = on ] && bluetoothctl -- connect 20:10:09:16:0C:5F
-  [ "$1" = off ] && bluetoothctl -- disconnect 20:10:09:16:0C:5F
-}
-
-function sw() {
-  date1=`date +%s`; while true; do 
-     echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
-  done
-}
+alias notes='cd ~/.notes && vim'

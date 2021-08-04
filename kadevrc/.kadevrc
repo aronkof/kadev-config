@@ -9,3 +9,4 @@ source ~/kadevrc/modules/docker
 source ~/kadevrc/modules/vimcommands
 source ~/kadevrc/modules/tmux
 source ~/kadevrc/modules/desktop
+tabs 2

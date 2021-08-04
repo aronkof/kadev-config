@@ -8,7 +8,7 @@ _alarm() {
 }
 
 _pomodoro_alarm() {
-  _alarm 200 300 && _alarm 200 300
+  _alarm 500 500 && _alarm 500 500
 }
 
 pomo-start() {

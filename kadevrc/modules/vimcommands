@@ -4,4 +4,4 @@ alias vim='nvim'
 alias vimcfg='nvim ~/.config/nvim/init.vim'
 # --- FZF SETTINGS --- #
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

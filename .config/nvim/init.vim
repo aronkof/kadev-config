@@ -38,10 +38,10 @@ call plug#end()
 " terminal
   set splitright
   tnoremap jj <c-\><c-n>
-  nnoremap <A-t> :vsp terminal<CR>:term<CR>:set nonu<bar>set nornu<bar>vertical resize 80<CR>
+  nnoremap <A-t> :tabnew<Bar>:term<CR>:set nonu<Bar>:set nornu<CR>
 
 " file tree - minimal implementation
-  nnoremap <C-e> :Lex <Bar> vertical resize 40<CR>
+  nnoremap <C-e> :Lex <CR>
   nnoremap <leader>re :let @/=expand("%:t") <Bar> execute ':Lex' expand("%:h") <CR>
   let g:netrw_keepdir=0
   let g:netrw_liststyle=3
@@ -78,7 +78,6 @@ call plug#end()
   set undodir=~/.vim/undodir
   set undofile
   set incsearch
-  set colorcolumn=122
   set expandtab
   set smarttab
   set shiftwidth=2
@@ -89,6 +88,7 @@ call plug#end()
 " folding
   set foldmethod=syntax
   set foldlevelstart=99
+  set foldopen-=block
 
 
 " theme (gruvbox)
@@ -225,3 +225,19 @@ let g:limelight_conceal_ctermfg=240
 " gq settings
 set textwidth=120
 set formatoptions-=t
+
+" interacitve shell sessions - to enable userspace aliases and functions
+set shellcmdflag=-ic
+
+" toggle relative number 'style'
+let s:rnu_enabled = 1
+function! ToggleRnuStyle()
+    if s:rnu_enabled
+        set rnu
+        let s:rnu_enabled = 0
+    else
+        set nornu
+        let s:rnu_enabled = 1
+    endif
+endfunction
+nnoremap <leader>rn :call ToggleRnuStyle()<CR>

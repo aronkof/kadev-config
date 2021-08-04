@@ -227,7 +227,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
 
 ! OVERRIDES !
-URxvt.font: xft:Ubuntu Mono derivative Powerline:size=12,-xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso10646-1
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=14,-xos4-terminus-medium-r-normal-*-16-160-72-72-c-80-iso10646-1
 URxvt.letterSpace:  -2
 
 URxvt.geometry: 92x24

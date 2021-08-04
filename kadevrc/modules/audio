@@ -11,3 +11,15 @@ mic_off() {
     pactl unload-module module-loopback
 }
 
+AIRPODS=7C:9A:1D:D5:2C:91
+GM4=20:10:09:16:0C:5F
+
+function pods() {
+  [ "$1" = on ] && bluetoothctl -- connect $AIRPODS
+  [ "$1" = off ] && bluetoothctl -- disconnect $AIRPODS
+}
+
+function gm4() {
+  [ "$1" = on ] && bluetoothctl -- connect $GM4
+  [ "$1" = off ] && bluetoothctl -- disconnect $GM4
+}

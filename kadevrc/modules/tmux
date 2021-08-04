@@ -21,5 +21,25 @@ function tmux-s() {
     tmux new-session -d -s $1
 }
 
+function tmux-w() {
+    if [ -z "$1" ]; then
+        TITLE="$1"
+    else
+        TITLE="untitled"
+    fi
+
+    tmux new-window -n $1
+}
+
+function tmux-rw() {
+    if [ -z "$1" ]; then
+        TITLE="$1"
+    else
+        TITLE="untitled"
+    fi
+
+    tmux rename-window $1
+}
+
 alias tmux-k='tmux kill-server'
-alias reload_tmux='tmux source-file ~/.tmux.conf'
+alias rtmux='tmux source-file ~/.tmux.conf'

@@ -31,4 +31,5 @@ keycode  20 = minus underscore F11
 keycode  21 = equal plus F12
 keycode  22 = BackSpace BackSpace Delete
 keycode  34 = bracketleft braceleft Home Home
-keycode  35 = bracketright braceright End Home
+keycode  35 = bracketright braceright End End
+

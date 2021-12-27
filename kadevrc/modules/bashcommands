@@ -11,3 +11,8 @@ alias bashcfg='vim ~/kadevrc/'
 alias kubecfg='vim ~/.kube/config'
 alias icopy='xclip -selection c -rmlastnl'
 alias notes='cd ~/.notes && vim'
+
+
+brightness() {
+  echo "xrandr --output <output> --brightness <value> (value ranges from 0 to 1.5)"
+}

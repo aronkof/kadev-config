@@ -7,5 +7,5 @@
 * copy these files to your home folder;
 * copy the contents of `environment.txt` to `/etc/environment`
 * add this to your .bashrc
-  * `source ~/kadevrc/.kadevrc`
+  + `source ~/kadevrc/.kadevrc`
 

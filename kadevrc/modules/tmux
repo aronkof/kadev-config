@@ -43,3 +43,5 @@ function tmux-rw() {
 
 alias tmux-k='tmux kill-server'
 alias rtmux='tmux source-file ~/.tmux.conf'
+
+alias tmux-setup='tmux-rw code && tmux-w code:ref && tmux-w VPN && tmux-w background && tmux-w doc && tmux-w misc'

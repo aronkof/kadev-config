@@ -40,3 +40,4 @@ keycode  61 = Up NoSymbol slash question
 keycode 135 = Down NoSymbol Down
 keycode 105 = Right NoSymbol Right
 keycode 108 = Left NoSymbol Left
+

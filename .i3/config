@@ -134,8 +134,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Down move workspace to output down
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -369,10 +371,10 @@ mode "$mode_gaps_outer" {
 }
 
 # KADEV I3 #
-set $ws1 1:code
-set $ws2 2:browse@work
-set $ws3 3:browse
-set $ws0 4:misc
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws0 4
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2

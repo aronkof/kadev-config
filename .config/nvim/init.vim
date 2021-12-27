@@ -14,14 +14,18 @@ call plug#begin('~/.vim/plugged')
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'junegunn/goyo.vim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'ThePrimeagen/harpoon'
+  Plug 'preservim/nerdtree'
 call plug#end()
 
-" custom command behavior
-  cmap W w
-  cmap Q q
-  
+command W w
+command Q q
+
 " leader,file and window commands
   let mapleader="\<Space>"
+  nmap = zz
   imap jj <esc>
   nnoremap <leader>] :tabnext<CR>
   nnoremap <leader>[ :tabprevious<CR>
@@ -30,6 +34,9 @@ call plug#end()
   nnoremap <leader>j :wincmd j<CR>
   nnoremap <leader>k :wincmd k<CR>
   nnoremap <leader>l :wincmd l<CR>
+  nnoremap <leader>0 :Goyo<CR>
+  nnoremap <left> <C-o>
+  nnoremap <right> <C-i>
 
   " close every buffer except the current one (will discard all unsaved
   " changes)
@@ -41,12 +48,7 @@ call plug#end()
   nnoremap <A-t> :tabnew<Bar>:term<CR>:set nonu<Bar>:set nornu<CR>
 
 " file tree - minimal implementation
-  nnoremap <C-e> :Lex <CR>
-  nnoremap <leader>re :let @/=expand("%:t") <Bar> execute ':Lex' expand("%:h") <CR>
-  let g:netrw_keepdir=0
-  let g:netrw_liststyle=3
-  let g:netrw_banner=0
-  let g:netrw_winsize=20
+  nnoremap <C-e> :NERDTreeToggle<CR>
 
 " file create/rename
   function! RenameFile()
@@ -160,6 +162,8 @@ endfunction
   nmap <leader>gt <Plug>(coc-type-definition)
   nmap <leader>gi <Plug>(coc-implementation)
   nmap <leader>rn <Plug>(coc-rename)
+  nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 " coc setup
   set cmdheight=2
@@ -241,3 +245,18 @@ function! ToggleRnuStyle()
     endif
 endfunction
 nnoremap <leader>rn :call ToggleRnuStyle()<CR>
+
+let g:goyo_linenr = 1 
+let g:goyo_width = 120
+
+" harpoon
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>o :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>tc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
+
+nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>t1 :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <leader>t2 :lua require("harpoon.term").gotoTerminal(2)<CR>

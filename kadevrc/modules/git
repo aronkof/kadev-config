@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # --- GIT SETUP / PROJECT SHORTCUTS ---- #
-alias will='cd ~/Projects/will'
-alias kadev='cd ~/Projects/kadev'
-alias ifood='cd ~/Projects/ifood'
-alias pj='cd ~/Projects'
-
 parse_branch() {
     git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -19,25 +14,12 @@ alias b='git branch'
 alias s='git status'
 alias diff='git diff'
 alias add='git add -A'
-alias glog='git log'
+alias glog='git log --show-signature'
 alias reset-hard='git reset --hard'
 alias fetch='git fetch --all'
-
-cout() {
-    if [ -z "$1" ]; then
-        echo No branch was provided for checkout
-    else
-        git checkout "$1"
-    fi
-}
-
-cout-b() {
-    if [ -z "$1" ]; then
-        echo No branch name provided
-    else
-        git checkout -b "$1"
-    fi
-}
+alias cout='git checkout'
+alias cout-b='git checkout -b'
+alias commit='git commit -v'
 
 pull() {
     if [ -z "$1" ]; then
@@ -52,9 +34,4 @@ pull() {
 push() {
     echo Pushing to active branch ["$(parse_branch_raw)"]
     git push origin "$(parse_branch_raw)"
-}
-
-commit() {
-    echo Commit message ["$1"]
-    git commit -m "$1"
 }

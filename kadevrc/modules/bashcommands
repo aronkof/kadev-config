@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
 # --- BASH SETUP --- #
-alias ls='ls --color=auto'
-alias ll='ls -al --color=auto'
-alias l='ls -a1 --group-directories-first'
+alias ls='exa -a1 --group-directories-first --icons'
+alias ll='ls -al'
+alias l='ls'
+
 alias c='clear'
+
+alias cat='batcat'
+
+alias printpath="echo $PATH | tr : '\n'"
 
 alias rbash='source ~/.bashrc'
 alias bashcfg='vim ~/kadevrc/'
 alias kubecfg='vim ~/.kube/config'
+alias notes='vim ~/projects/.notes'
 alias icopy='xclip -selection c -rmlastnl'
-alias notes='cd ~/.notes && vim'
-
 
 brightness() {
   echo "xrandr --output <output> --brightness <value> (value ranges from 0 to 1.5)"

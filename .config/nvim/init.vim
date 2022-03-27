@@ -1,23 +1,51 @@
 call plug#begin('~/.vim/plugged')
+  " aesthetics
   Plug 'morhetz/gruvbox'
+  Plug 'itchyny/lightline.vim'
+
+  " javascript
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'pangloss/vim-javascript'
+
+  " coc: language server
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  " fuzzy finder
   Plug 'junegunn/fzf.vim'
-  Plug 'junegunn/limelight.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'itchyny/lightline.vim'
+
+  " focus
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
+
+  " git support 
   Plug 'tpope/vim-fugitive'
+
+  " edit helper tools
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
+
+  " go support
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+  " clojure support
+  Plug 'Olical/conjure'
+  Plug 'dmac/vim-cljfmt'
+  Plug 'tpope/vim-dispatch'
+  Plug 'clojure-vim/vim-jack-in'
+  Plug 'radenling/vim-dispatch-neovim'
+
+  " markdown
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-  Plug 'junegunn/goyo.vim'
+
+  " interactive file tree navigation
+  Plug 'preservim/nerdtree'
+
+  " much better than marks
   Plug 'nvim-lua/plenary.nvim'
   Plug 'ThePrimeagen/harpoon'
-  Plug 'preservim/nerdtree'
 call plug#end()
 
 command W w
@@ -25,6 +53,7 @@ command Q q
 
 " leader,file and window commands
   let mapleader="\<Space>"
+  let maplocalleader="\<Space>"
   nmap = zz
   imap jj <esc>
   nnoremap <leader>] :tabnext<CR>
@@ -34,7 +63,7 @@ command Q q
   nnoremap <leader>j :wincmd j<CR>
   nnoremap <leader>k :wincmd k<CR>
   nnoremap <leader>l :wincmd l<CR>
-  nnoremap <leader>0 :Goyo<CR>
+  nnoremap <leader>= :Goyo<CR>
   nnoremap <left> <C-o>
   nnoremap <right> <C-i>
 

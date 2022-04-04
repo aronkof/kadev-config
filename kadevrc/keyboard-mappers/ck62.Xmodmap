@@ -1,5 +1,5 @@
-! --- INTENTION --- !
 ! this is script intends to normalize our keyboard use with a hybrid setup
+! --- INTENTION --- !
 ! really close to one another - on native laptop keyboards we will try to
 ! emulate the modifier on the numbers row, enabling number functions SymKeys
 ! and switching '`~' to 'esc' and adding the 'delete'key to the backspace
@@ -16,7 +16,7 @@ keycode 66 = Mode_switch
 
 ! --- mapping numbers keyboard row --- !
 keycode  48 = dead_acute dead_diaeresis apostrophe quotedbl apostrophe quotedbl
-keycode  10 = 1 exclam F1 F1
+keycode  10 = 1 exclam F1 dead_tilde
 keycode  11 = 2 at F2 F2
 keycode  12 = 3 numbersign F3 F3
 keycode  13 = 4 dollar F4 F4
@@ -33,7 +33,7 @@ keycode  34 = bracketleft braceleft Home Home
 keycode  35 = bracketright braceright End End
 
 !ck62 escape keycode is 9
-keycode   9 = Escape Escape dead_grave dead_tilde
+keycode   9 = Escape dead_tilde dead_grave dead_tilde
 
 !remap ck62 directional arrows
 keycode  61 = Up NoSymbol slash question

@@ -3,6 +3,7 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 DEFAULT_SESSION_NAME=kadev
 
+alias tmuxcfg='vim ~/.tmux.conf'
 alias tmux-rw='tmux rename-window'
 alias tmux-ns="tmux new-session -ds $DEFAULT_SESSION_NAME &&\
   tmux send-keys -t $DEFAULT_SESSION_NAME:1 tmux-work-setup C-m &&\

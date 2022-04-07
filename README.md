@@ -99,6 +99,7 @@
   + select 4096 size
   + list your GPG keys and look for the key ID(it a format similar to this example: 3AA5C34371567BD2)
   + `gpg --list-secret-keys --keyid-format=long`
+  + add your signing key to git `git config --global user.signingkey <your_gpg_key>`
   + use the this command `gpg --armor --export <your_gpg_key_id>` to print the GPG key and set it on your VCS of choice
 
 19. git settings

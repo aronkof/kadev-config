@@ -12,12 +12,11 @@ alias cat='batcat'
 alias printpath="echo $PATH | tr : '\n'"
 
 alias rbash='source ~/.bashrc'
-alias bashcfg='vim ~/kadevrc/'
+alias kadevcfg='vim ~/kadevrc/'
 alias kubecfg='vim ~/.kube/config'
 alias notes='vim ~/projects/.notes'
 alias icopy='xclip -selection c -rmlastnl'
 alias i3cfg='vim ~/.config/i3/config'
 
-brightness() {
-  echo "xrandr --output <output> --brightness <value> (value ranges from 0 to 1.5)"
-}
+# bin paths #
+export PATH="$PATH:$HOME/projects/bin"

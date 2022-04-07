@@ -8,6 +8,8 @@ parse_branch_raw() {
     git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
+# this is very important to enable commit signing using GPG keys
+export GPG_TTY=$(tty)
 export PS1='\[\033[01;32m\]\W\[\033[00m\]$(parse_branch) $ '
 
 alias b='git branch'

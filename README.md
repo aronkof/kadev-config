@@ -97,10 +97,22 @@
   + use the public key(id_ed25519.pub) content to set it on your VCS of choice
   + `gpg --full-generate-key`
   + select 4096 size
-  + list your GPG keys and look for the key ID(it has this format: 3AA5C34371567BD2)
+  + list your GPG keys and look for the key ID(it a format similar to this example: 3AA5C34371567BD2)
+  + `gpg --list-secret-keys --keyid-format=long`
   + use the this command `gpg --armor --export <your_gpg_key_id>` to print the GPG key and set it on your VCS of choice
 
-19. extra - setup **x11vnc** to enable ipad as an external monitor
+19. git settings
+  + add this to your `.gitconfig` file
+    - <pre><code>
+      [url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
+      [core]
+        editor = nvim
+      [commit]
+        gpgsign = true
+      </pre></code>
+
+20. extra - setup **x11vnc** to enable ipad as an external monitor
   + `sudo apt install x11vnc`
   + if your current machine has an intel processor, you can install **virtscreen**
   + if you're working with NVIDIA graphics you'll need a dummy hdmi monitor dongle

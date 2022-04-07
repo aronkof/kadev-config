@@ -1,0 +1,11 @@
+[Unit]
+Description=spotify device daemon service
+
+[Service]
+Type=simple
+ExecStart=spotifyd --no-daemon -u aronk1990 -p qo43s82tt
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

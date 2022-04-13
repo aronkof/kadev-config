@@ -1,0 +1,11 @@
+[Unit]
+Description=Iriun webcam service
+
+[Service]
+Type=simple
+ExecStart=iriunwebcam
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -3,7 +3,7 @@ Description=x11vnc service to enable dual monitor with dummy hdmi dongle
 
 [Service]
 Type=simple
-ExecStart=x11vnc -cursor -clip xinerama1
+ExecStart=x11vnc -forever -multiptr -clip xinerama1
 Restart=on-failure
 RestartSec=3
 

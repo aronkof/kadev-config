@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-# copy contents of home-folder to $HOME
+if ! [ -x /usr/bin/stow ]; then
+  echo "error: stow is not installed" 
+  echo "to fix this, run: sudo apt install stow"
+  exit 1
+fi
 
-# copy contents of dot-config folder to $HOME/.config
+stow -vt "$HOME/projects/kadevrc/test-stow-folder" tmux
+stow -vt "$HOME/projects/kadevrc/test-stow-folder" config
+stow -vt "$HOME/projects/kadevrc/test-stow-folder" kadevrc
 
-# create a symlink to kadevrc folder to $HOME/kadevrc
-
-# copy systemd services and enable them
-
-# source bashrc to reload everything
+# stow -vt $HOME tmux
+# stow -vt $HOME config
+# stow -vt $HOME kadevrc

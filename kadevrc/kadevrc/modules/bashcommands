@@ -17,6 +17,3 @@ alias kubecfg='vim ~/.kube/config'
 alias notes='vim ~/projects/.notes'
 alias icopy='xclip -selection c -rmlastnl'
 alias i3cfg='vim ~/.config/i3/config'
-
-# bin paths #
-export PATH="$PATH:$HOME/projects/bin"

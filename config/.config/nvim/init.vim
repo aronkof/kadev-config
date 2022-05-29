@@ -24,7 +24,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " clojure support
   Plug 'Olical/conjure'
-  Plug 'dmac/vim-cljfmt'
   Plug 'tpope/vim-dispatch'
   Plug 'clojure-vim/vim-jack-in'
   Plug 'radenling/vim-dispatch-neovim'
@@ -47,9 +46,9 @@ call plug#end()
 
 lua require('aronkof/init')
 
-" nubank/clojure
-nnoremap <leader>L :Lein<CR>
-nnoremap <leader>LC :Lein catalyst-repl<CR>
+" LSP autoformat
+autocmd FileType clojure autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()
+autocmd FileType clojure,scheme,lisp,timl call s:vim_sexp_mappings()
 
 let g:sexp_filetypes = ''
 
@@ -87,7 +86,10 @@ function! s:vim_sexp_mappings()
   xmap <silent><buffer> <LocalLeader>W  <Plug>(sexp_round_tail_wrap_element)
 endfunction
 
-autocmd FileType clojure,scheme,lisp,timl call s:vim_sexp_mappings()
+" Nubank REPL command
+command Repl :Lein with-profile +repl-start trampoline repl :headless
+command REPL :Repl
+command REPLA :Lein catalyst-repl
 
 " custom commands
 command W w
@@ -96,6 +98,7 @@ command Wq wq
 command WQ wq
 command Qa qa
 command QA qa
+
 command Vimcfg :e ~/.config/nvim/init.vim
 
 " leader,file and window commands
@@ -103,17 +106,19 @@ let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 nmap = zz
 imap jj <esc>
-nnoremap t] :tabnext<CR>
-nnoremap t[ :tabprevious<CR>
+
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprevious<CR>
+
 nnoremap <leader><leader> <C-^>
-nnoremap ; <C-^>
+
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" focus
 nnoremap <leader>= :Goyo<CR>
-nnoremap <left> <C-o>
-nnoremap <right> <C-i>
 
 " surround remap
 nmap S ys
@@ -121,6 +126,7 @@ nmap S ys
 " terminal
 set splitright
 tnoremap jj <c-\><c-n>
+tnoremap <leader><leader> :tabprev<CR>
 nnoremap <A-t> :tabnew<Bar>:term<CR>:set nonu<Bar>:set nornu<CR>
 
 " file tree - minimal implementation
@@ -149,6 +155,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set nohlsearch
+set splitbelow
   
 " folding
 set foldmethod=syntax
@@ -211,10 +218,24 @@ set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
 
 " copy and paste
 set clipboard+=unnamedplus
+
+" avoid messing the clipboard with these commands
 nnoremap _d d
 vnoremap _d d
 nnoremap d "xd
 vnoremap d "xd
+nnoremap D "xD
+vnoremap D "xD
+nnoremap x "xx
+vnoremap x "xx
+nnoremap s "xs
+vnoremap s "xs
+nnoremap c "xc
+vnoremap c "xc
+nnoremap C "xC
+vnoremap C "xC
+
+" mapping to enable moving lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
@@ -227,6 +248,7 @@ let g:mkdp_markdown_css='/home/aronk/.config/nvim/github-markdown.css'
 
 " Limelight setup
 let g:limelight_conceal_ctermfg=240
+nnoremap <leader>- :Limelight!!<CR>
 
 " gq settings
 set textwidth=120
@@ -249,7 +271,7 @@ endfunction
 nnoremap <leader>rn :call ToggleRnuStyle()<CR>
 
 let g:goyo_linenr = 1 
-let g:goyo_width = 120
+let g:goyo_width = 200
 
 " telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -259,11 +281,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " harpoon
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>o :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <leader>tc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
-
 nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
-nnoremap <leader>t1 :lua require("harpoon.term").gotoTerminal(1)<CR>
-nnoremap <leader>t2 :lua require("harpoon.term").gotoTerminal(2)<CR>
+

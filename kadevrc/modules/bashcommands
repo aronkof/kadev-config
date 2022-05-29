@@ -14,6 +14,6 @@ alias printpath="echo $PATH | tr : '\n'"
 alias rbash='source ~/.bashrc'
 alias kadevcfg='vim ~/kadevrc/'
 alias kubecfg='vim ~/.kube/config'
-alias notes='vim ~/projects/notes.md'
+alias notes='vim ~/projects/.notes'
 alias icopy='xclip -selection c -rmlastnl'
 alias i3cfg='vim ~/.config/i3/config'

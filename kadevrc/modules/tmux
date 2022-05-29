@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+DEFAULT_SESSION_NAME=kadev
+
+alias tmuxcfg='vim ~/.tmux.conf'
+alias tmux-rw='tmux rename-window'
+alias tmux-ns="tmux new-session -ds $DEFAULT_SESSION_NAME &&\
+  tmux send-keys -t $DEFAULT_SESSION_NAME:1 tmux-work-setup C-m &&\
+  tmux a"
+
+alias tmux-k='tmux kill-server'
+alias rtmux='tmux source-file ~/.tmux.conf'
+alias tmux-work-setup='tmux-rw proj:1 &&\
+  tmux-w proj:2 &&
+  tmux-w test &&\
+  tmux-w background &&\
+  tmux-w misc &&\
+  tmux-w notes "notes" &&\
+  tmux-w VPN &&\
+  clear &&\
+  tmux select-window -t 6'
+
+function tmux-w() {
+  if [ ! -z "$1" ]; then
+    TITLE="$1"
+  else
+    echo "usage: tmux-w window_name [command]"
+    return 1
+  fi
+
+  tmux new-window -dn $1
+
+  if [ ! -z "$2" ]; then
+    tmux send-keys -t "$DEFAULT_SESSION_NAME:$TITLE" "$2" "C-m"
+  fi
+}
+
+function tmux-cmd() {
+  tmux send-keys -t "$DEFAULT_SESSION_NAME:$1" "$2" "C-m"
+}
+
+function tmux-sigterm() {
+  tmux send-keys -t "$DEFAULT_SESSION_NAME:$1" "C-c"
+}

@@ -22,7 +22,6 @@ alias fetch='git fetch --all'
 alias cout='git checkout'
 alias cout-b='git checkout -b'
 alias commit='git commit -v'
-alias gresign="git rebase --exec 'git commit --amend --no-edit -n -S' -i"
 
 pull() {
     if [ -z "$1" ]; then

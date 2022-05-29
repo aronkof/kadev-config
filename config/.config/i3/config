@@ -167,7 +167,6 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="IriunWebcam"] move scratchpad
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -279,7 +278,7 @@ bar {
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+	tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
@@ -302,7 +301,24 @@ bar {
 }
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -338,6 +354,8 @@ bindsym $mod+Shift+4 move container to workspace $ws0;
 
 workspace_auto_back_and_forth no
 
-bindsym $mod+Shift+l exec --no-startup-id blurlock
+bindsym $mod+Shift+l exec 'i3-msg exit'
+
 bindsym --release $mod+Shift+p exec maim -s | xclip -selection clipboard -t image/png
-bindsym --release $mod+p exec maim -s /home/aronk/screenshots/$(date +%s).png
+bindsym --release $mod+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
+

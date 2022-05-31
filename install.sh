@@ -6,6 +6,8 @@ if ! [ -x /usr/bin/stow ]; then
   exit 1
 fi
 
+echo "installing kadev dotfiles..."
+
 stow -vt $HOME tmux
 stow -vt $HOME config
 stow -vt $HOME user_scripts

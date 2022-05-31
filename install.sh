@@ -8,4 +8,5 @@ fi
 
 stow -vt $HOME tmux
 stow -vt $HOME config
+stow -vt $HOME user_scripts
 stow -vt $HOME kadevrc

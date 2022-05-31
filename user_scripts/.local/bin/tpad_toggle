@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "tpad is being run"
+
+if synclient | grep TouchpadOff | grep -q 0; then
+    synclient TouchpadOff=1
+else
+    synclient TouchpadOff=0
+fi

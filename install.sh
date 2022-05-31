@@ -6,10 +6,6 @@ if ! [ -x /usr/bin/stow ]; then
   exit 1
 fi
 
-stow -vt "$HOME/projects/kadevrc/test-stow-folder" tmux
-stow -vt "$HOME/projects/kadevrc/test-stow-folder" config
-stow -vt "$HOME/projects/kadevrc/test-stow-folder" kadevrc
-
-# stow -vt $HOME tmux
-# stow -vt $HOME config
-# stow -vt $HOME kadevrc
+stow -vt $HOME tmux
+stow -vt $HOME config
+stow -vt $HOME kadevrc

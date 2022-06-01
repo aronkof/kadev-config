@@ -111,6 +111,7 @@ nnoremap tj :tabnext<CR>
 nnoremap tk :tabprevious<CR>
 
 nnoremap <leader><leader> <C-^>
+autocmd BufNewFile,BufRead *.cljc nnoremap <buffer> <leader><leader> <Nop>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>

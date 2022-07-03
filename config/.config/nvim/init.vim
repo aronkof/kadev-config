@@ -87,7 +87,7 @@ function! s:vim_sexp_mappings()
 endfunction
 
 " Nubank REPL command
-command Repl :Lein with-profile +repl-start trampoline repl :headless
+command Repl :Lein with-profile +dev trampoline repl :headless
 command REPL :Repl
 command REPLA :Lein catalyst-repl
 

@@ -15,8 +15,8 @@ add mod5 = Mode_switch
 keycode 66 = Mode_switch
 
 ! --- mapping numbers keyboard row --- !
-keycode  48 = dead_acute dead_diaeresis apostrophe quotedbl apostrophe quotedbl
-keycode  49 = Escape Escape dead_grave dead_tilde
+keycode  48 = apostrophe quotedbl dead_acute dead_diaeresis
+keycode  49 = Escape Escape grave asciitilde
 keycode  10 = 1 exclam F1 dead_tilde
 keycode  11 = 2 at F2 F2
 keycode  12 = 3 numbersign F3 F3

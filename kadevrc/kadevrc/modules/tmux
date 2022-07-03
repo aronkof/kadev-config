@@ -17,7 +17,7 @@ alias tmux-work-setup='tmux-rw proj:1 &&\
   tmux-w background &&\
   clear &&\
   tmux select-window -t 4
-  tmux split && tmux split && tmux split && tmux select-layout tiled
+  tmux split && tmux split && tmux select-layout tiled
   tmux select-window -t 1'
 
 alias tmux-split='tmux split-window'

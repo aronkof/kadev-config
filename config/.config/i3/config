@@ -359,3 +359,4 @@ bindsym $mod+Shift+l exec 'i3-msg exit'
 bindsym --release $mod+Shift+p exec maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
 
+exec --no-startup-id xmodmap -e 'keycode 108 = Super_R' && xset -r 108

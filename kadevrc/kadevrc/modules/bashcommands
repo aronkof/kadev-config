@@ -19,3 +19,7 @@ alias i3cfg='vim ~/.config/i3/config'
 
 alias icopy='xclip -selection c -rmlastnl'
 alias pbcopy='xclip -sel clip'
+
+# windows specific commands
+alias shell:startup='cd "/mnt/c/Users/aron.koffler/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup"' 
+alias winfolder='cd "/mnt/c/Users/aron.koffler/wsl"'

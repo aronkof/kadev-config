@@ -6,7 +6,7 @@ DEFAULT_SESSION_NAME=kadev
 alias tmuxcfg='vim ~/.tmux.conf'
 alias tmux-rw='tmux rename-window'
 alias tmux-ns="tmux new-session -ds $DEFAULT_SESSION_NAME &&\
-  tmux send-keys -t $DEFAULT_SESSION_NAME:1 tmux-work-setup C-m &&\
+  sleep 1 && tmux send-keys -t $DEFAULT_SESSION_NAME:1 tmux-work-setup C-m &&\
   tmux a"
 
 alias tmux-k='tmux kill-server'
@@ -17,7 +17,7 @@ alias tmux-work-setup='tmux-rw proj:1 &&\
   tmux-w background &&\
   clear &&\
   tmux select-window -t 4
-  tmux split && tmux split && tmux split && tmux select-layout tiled
+  tmux split && tmux split && tmux select-layout tiled
   tmux select-window -t 1'
 
 alias tmux-split='tmux split-window'
@@ -46,3 +46,6 @@ function tmux-cmd() {
 function tmux-sigterm() {
   tmux send-keys -t "$DEFAULT_SESSION_NAME:$1" "C-c"
 }
+
+# RD Client limitation aliases
+alias win='tmux select-window -t'

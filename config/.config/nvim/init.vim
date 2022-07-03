@@ -20,6 +20,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'saadparwaiz1/cmp_luasnip'
   " go support
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " clojure support
@@ -105,7 +107,9 @@ command Vimcfg :e ~/.config/nvim/init.vim
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 nmap = zz
-imap jj <esc>
+
+" *EXPERIMENTAL*
+" imap jj <esc>
 
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprevious<CR>
@@ -218,7 +222,7 @@ hi CursorLineNr ctermbg=NONE
 set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
 
 " copy and paste
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " avoid messing the clipboard with these commands
 nnoremap _d d
@@ -282,8 +286,19 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " harpoon
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>o :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
 nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
+
 nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
 
+lua << EOF
+require'telescope'.setup({
+    defaults = {
+        file_ignore_patterns = { "^./.git/", "./node_modules/*", "./vendor/*" },
+    }
+})
+EOF

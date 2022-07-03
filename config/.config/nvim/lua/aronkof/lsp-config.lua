@@ -7,7 +7,7 @@ cmp.register_source('conjure', cmp_conjure.new())
 local opts = { noremap=true, silent=true }
 
 
-local servers = { 'gopls', 'clojure_lsp' }
+local servers = { 'gopls', 'clojure_lsp', 'rust_analyzer', 'tsserver' }
 vim.api.nvim_set_keymap('n', '][', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -55,7 +55,12 @@ local cmp_mapping = {
 
 cmp.setup {
   sources = cmp_sources,
-  mapping = cmp_mapping
+  mapping = cmp_mapping,
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end
+  }
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

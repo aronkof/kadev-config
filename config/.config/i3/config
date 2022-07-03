@@ -361,6 +361,7 @@ bindsym $mod+Shift+m exec 'tpad_toggle'
 bindsym --release $mod+Shift+p exec maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
 
+<<<<<<< HEAD
 # re-do binds for $mod1
 
 bindsym $mod1+u border none
@@ -466,3 +467,4 @@ bindsym $mod1+Shift+m exec 'tpad_toggle'
 
 bindsym --release $mod1+Shift+p exec maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod1+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
+exec --no-startup-id xmodmap -e 'keycode 108 = Super_R' && xset -r 108

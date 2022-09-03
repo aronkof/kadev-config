@@ -7,7 +7,7 @@ cmp.register_source('conjure', cmp_conjure.new())
 local opts = { noremap=true, silent=true }
 
 
-local servers = { 'gopls', 'clojure_lsp', 'rust_analyzer', 'tsserver' }
+local servers = { 'gopls', 'clojure_lsp', 'rust_analyzer', 'tsserver', 'cssls' }
 vim.api.nvim_set_keymap('n', '][', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)

@@ -109,7 +109,7 @@ let maplocalleader="\<Space>"
 nmap = zz
 
 " *EXPERIMENTAL*
-" imap jj <esc>
+imap jj <esc>
 
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprevious<CR>

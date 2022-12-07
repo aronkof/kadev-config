@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+INPUT_ID=$(xinput --list | grep Touchpad | grep -vw "Logitech" | awk '{split($0,a," "); print a[6]}' | awk '{split($0,b,"="); print b[2]}')
+INPUT_STATUS=$(xinput --list-props "$INPUT_ID" | grep Enabled)
+IS_ENABLED="${INPUT_STATUS: -1}"
 
-echo "tpad is being run"
-
-if synclient | grep TouchpadOff | grep -q 0; then
-    synclient TouchpadOff=1
+if [ $IS_ENABLED == "1" ] ; then
+    xinput disable "$INPUT_ID"
 else
-    synclient TouchpadOff=0
+    xinput enable "$INPUT_ID"
 fi

@@ -36,6 +36,11 @@ keycode  35 = bracketright braceright End End
 !ck62 escape keycode is 9
 keycode   9 = Escape Escape grave asciitilde
 
+keycode  38 = a A Left a
+keycode  39 = s S Down s
+keycode  40 = d D Right d
+keycode  25 = w W Up w
+
 !remap ck62 directional arrows
 keycode  61 = Up NoSymbol slash question
 keycode 135 = Down NoSymbol Down

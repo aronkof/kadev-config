@@ -12,17 +12,17 @@ alias tmux-ns="tmux new-session -ds $DEFAULT_SESSION_NAME &&\
 alias tmux-k='tmux kill-server'
 alias rtmux='tmux source-file ~/.tmux.conf'
 alias tmux-work-setup='tmux-rw proj:1 &&\
-  tmux-w proj:2 &&
+  tmux-w proj:2 &&\
   tmux-w misc &&\
   tmux-w background &&\
+  tmux-w test &&\
   clear &&\
-  tmux select-window -t 4
-  tmux split && tmux split && tmux select-layout tiled
+  tmux select-window -t 4 &&\
+  tmux split && 
   tmux select-window -t 1'
 
 alias tmux-split='tmux split-window'
 alias tmux-splitv='tmux split-window -h'
-
 
 function tmux-w() {
   if [ ! -z "$1" ]; then

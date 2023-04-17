@@ -8,4 +8,6 @@ source ~/kadevrc/modules/docker
 source ~/kadevrc/modules/keyboard
 source ~/kadevrc/modules/vimcommands
 source ~/kadevrc/modules/tmux
+source ~/kadevrc/modules/psql
+source ~/kadevrc/modules/pomo
 tabs 2

@@ -6,8 +6,8 @@ alias ll='ls -al'
 alias l='ls'
 
 alias c='clear'
-
-alias cat='batcat'
+alias cc='cclear'
+alias cclear='clear; echo -e "\033c\e[3J"'
 
 alias printpath="echo $PATH | tr : '\n'"
 
@@ -23,3 +23,6 @@ alias pbcopy='xclip -sel clip'
 # windows specific commands
 alias shell:startup='cd "/mnt/c/Users/aron.koffler/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup"' 
 alias winfolder='cd "/mnt/c/Users/aron.koffler/wsl"'
+
+# notebook brightness
+alias xlight='xrandr --output eDP-1 --brightness'

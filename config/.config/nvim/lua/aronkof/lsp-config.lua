@@ -1,17 +1,11 @@
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')
-local cmp_conjure = require('aronkof/cmp_conjure')
-
-cmp.register_source('conjure', cmp_conjure.new())
-
 local opts = { noremap=true, silent=true }
 
-
-local servers = { 'gopls', 'clojure_lsp', 'rust_analyzer', 'tsserver', 'cssls' }
-vim.api.nvim_set_keymap('n', '][', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+local servers = { 'gopls', 'rust_analyzer', 'tsserver', 'cssls' }
 vim.api.nvim_set_keymap('n', '[[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[]', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[]', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -29,7 +23,6 @@ vim.o.completeopt = "menuone,noselect"
 
 local cmp_sources = cmp.config.sources({
   { name = 'nvim_lsp' },
-  { name = 'conjure' },
 });
 
 local cmp_mapping = {
@@ -63,7 +56,7 @@ cmp.setup {
   }
 }
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, lsp in pairs(servers) do
   lspconfig[lsp].setup {

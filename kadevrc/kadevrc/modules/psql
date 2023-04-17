@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# willbank commands
+alias _psql-invoice='psql "sslmode=disable dbname=postgres user=data hostaddr=postgresql-core-invoice-prod.cfgauggxqwyh.sa-east-1.rds.amazonaws.com"'

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# --- MINIMALIST POMODORO --- #
+_alarm() {
+  ( \speaker-test --frequency $1 --test sine )&
+  pid=$!
+  \sleep 0.${2}s
+  \kill -9 $pid
+}
+
+_pomodoro_alarm() {
+  _alarm 500 500 && _alarm 500 500
+}
+
+pomo-start() {
+    if [ -z "$1" ]; then
+      echo starting pomodoro for 25 mins. [ default ]
+      sleep 1500 && send-notify pomodoro finished && _pomodoro_alarm &
+    else
+      echo starting pomodoro for "$1" mins.
+      sleep $(($1 * 60)) && notify-send pomodoro finished && _pomodoro_alarm &
+    fi
+}

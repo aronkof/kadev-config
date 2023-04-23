@@ -67,10 +67,6 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-" close buffer
-nnoremap <leader>w :bw<CR>
-
-
 " focus
 nnoremap <leader>= :Goyo<CR>
 
@@ -219,6 +215,3 @@ nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 
 nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
-
-" Go tests
-" nnoremap <leader>tl :exe "!xlight 0.5"<CR>

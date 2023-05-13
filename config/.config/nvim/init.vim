@@ -187,6 +187,7 @@ let g:go_textobj_enabled=0
 " Markdown setup
 autocmd FileType markdown set conceallevel=0
 autocmd FileType markdown normal zR
+let g:markdown_recommended_style = 0
 
 " gq settings
 set textwidth=120

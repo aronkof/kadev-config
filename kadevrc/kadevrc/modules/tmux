@@ -5,6 +5,7 @@ DEFAULT_SESSION_NAME=kadev
 
 alias tmuxcfg='vim ~/.tmux.conf'
 alias tmux-rw='tmux rename-window'
+alias rw='tmux-rw'
 alias tmux-ns="tmux new-session -ds $DEFAULT_SESSION_NAME &&\
   sleep 1 && tmux send-keys -t $DEFAULT_SESSION_NAME:1 tmux-work-setup C-m &&\
   tmux a"

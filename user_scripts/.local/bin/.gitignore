@@ -1,12 +1,6 @@
-gmail-calendar-task
-gmail_curr_task_output
-identify-cli
-LICENSE
-nodeenv
-nvim
-obsidian
-pgcli
-pre-commit*
-sqlformat
-tabulate
-virtualenv
+# ignore everything
+*
+
+# allow list
+!tpad_toggle
+!screen_orientation.sh

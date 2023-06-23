@@ -52,7 +52,8 @@ command Rvim :source ~/.config/nvim/init.vim
 " leader,file and window commands
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
-imap <M-[> <esc>
+imap <M-j> <esc>
+vmap <M-j> <esc>
 
 nmap <M-s> <nop>
 nmap = zz
@@ -66,6 +67,7 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader><leader> <C-^>
 
 " focus
 nnoremap <leader>= :Goyo<CR>
@@ -78,7 +80,8 @@ nnoremap <C-e> :NERDTreeToggle<CR>
 nnoremap <M-e> :NERDTreeFind<CR>
 autocmd FileType nerdtree nnoremap <buffer> e <nop>
 autocmd FileType nerdtree nnoremap <buffer> <M-e> <nop>
-autocmd FileType nerdtree nnoremap <buffer> <leader>ff :wincmd l<CR> <bar> :echo "ok ok"<CR>
+autocmd FileType nerdtree nnoremap <buffer> <leader>ff :wincmd l<CR>
+autocmd FileType nerdtree nnoremap <buffer> <leader><leader> :wincmd l<CR>
 
 let g:NERDTreeWinSize=40
 
@@ -182,7 +185,14 @@ vnoremap C "xC
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
+" temp scratch pad markdown
+nnoremap <leader>T :split /tmp/scratchpad.md <bar> resize 15<CR>
+
+" Go
 let g:go_textobj_enabled=0
+nnoremap <leader>e :!go run /tmp/main.go<CR>
+nnoremap <leader>t :e /tmp/main.go<CR>
+
 
 " Markdown setup
 autocmd FileType markdown set conceallevel=0

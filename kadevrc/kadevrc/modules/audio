@@ -11,15 +11,11 @@ mic_off() {
     pactl unload-module module-loopback
 }
 
-AIRPODS=7C:9A:1D:D5:2C:91
-GM4=20:10:09:16:0C:5F
+# GM4   MAC ADDR :: 20:10:09:16:0C:5F
+# AZ09  MAC ADDR :: A8:99:DC:47:BD:FA
 
-function pods() {
-  [ "$1" = on ] && bluetoothctl -- connect $AIRPODS
-  [ "$1" = off ] && bluetoothctl -- disconnect $AIRPODS
-}
+alias gm4-on='bluetoothctl unblock 20:10:09:16:0C:5F && bluetoothctl -- connect 20:10:09:16:0C:5F'
+alias gm4-off='bluetoothctl -- disconnect 20:10:09:16:0C:5F && bluetoothctl block 20:10:09:16:0C:5F'
 
-function gm4() {
-  [ "$1" = on ] && bluetoothctl -- connect $GM4
-  [ "$1" = off ] && bluetoothctl -- disconnect $GM4
-}
+alias az-on='bluetoothctl unblock A8:99:DC:47:BD:FA && bluetoothctl -- connect A8:99:DC:47:BD:FA'
+alias az-off='bluetoothctl -- disconnect A8:99:DC:47:BD:FA && bluetoothctl block A8:99:DC:47:BD:FA'

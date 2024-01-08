@@ -25,7 +25,7 @@ keycode  118 = Hyper_L Hyper_L
 ! keycode  48 = dead_acute dead_diaeresis apostrophe quotedbl apostrophe quotedbl
 keycode  48 = apostrophe quotedbl dead_acute quotedbl
 
-keycode  10 = 1 exclam grave dead_tilde
+keycode  10 = 1 exclam dead_grave dead_tilde
 keycode  11 = 2 at F2 F2
 keycode  12 = 3 numbersign F3 F3
 keycode  13 = 4 dollar F4 F4
@@ -47,3 +47,6 @@ keycode   9 = Escape Escape grave asciitilde
 keycode  22 = BackSpace BackSpace Delete
 keycode  34 = bracketleft braceleft Home Home
 keycode  35 = bracketright braceright End End
+
+keycode  52 = z Z Pointer_Button1 z
+keycode  53 = x X Pointer_Button3 x

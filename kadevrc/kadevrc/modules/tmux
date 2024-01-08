@@ -16,7 +16,7 @@ alias tmux-work-setup='tmux-rw proj:1 &&\
   tmux-w proj:2 &&\
   tmux-w misc &&\
   tmux-w background &&\
-  tmux-w test &&\
+  tmux-w kadevnotes &&\
   clear &&\
   tmux select-window -t 4 &&\
   tmux split && 

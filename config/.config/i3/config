@@ -358,8 +358,6 @@ workspace_auto_back_and_forth no
 bindsym $mod+Shift+l exec 'xss-lock -- i3lock -n -c 000000'
 bindsym $mod+Shift+m exec 'tpad_toggle'
 
-bindsym $mod+Ctrl+h exec /usr/bin/diodon
-
 bindsym --release $mod+Shift+p exec maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
 
@@ -468,6 +466,9 @@ bindsym $mod1+Shift+m exec 'tpad_toggle'
 
 bindsym --release $mod1+Shift+p exec maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod1+p exec maim -s /home/$USERNAME/screenshots/$(date +%s).png
+bindsym --release $mod+Ctrl+p exec maim /home/$USERNAME/screenshots/full-printscreen.png
+
+bindsym $mod+Ctrl+h exec diodon
 
 exec --no-startup-id xmodmap -e 'keycode 108 = Super_R' && xset -r 108
 exec --no-startup-id nm-applet

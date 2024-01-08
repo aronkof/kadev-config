@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/nvim-cmp'
   Plug 'L3MON4D3/LuaSnip'
   Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  Plug 'williamboman/nvim-lsp-installer'
   " go support
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " interactive file tree navigation
@@ -226,3 +228,6 @@ nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
 
 nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
+
+" lsp diag toggler
+nmap <leader>tld  <Plug>(toggle-lsp-diag)

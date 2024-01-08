@@ -25,4 +25,4 @@ alias shell:startup='cd "/mnt/c/Users/aron.koffler/AppData/Roaming/Microsoft/Win
 alias winfolder='cd "/mnt/c/Users/aron.koffler/wsl"'
 
 # notebook brightness
-alias xlight='xrandr --output DVI-D-0 --brightness'
+alias xlight='xrandr --output eDP-1 --brightness'

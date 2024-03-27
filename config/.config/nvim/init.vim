@@ -25,6 +25,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'williamboman/nvim-lsp-installer'
   " go support
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  " java/kt support
+  Plug 'mfussenegger/nvim-jdtls'
+  Plug 'williamboman/mason.nvim'
   " interactive file tree navigation
   Plug 'preservim/nerdtree'
   " much better than marks
@@ -63,6 +66,8 @@ nmap { {k
 nmap } }j
 nmap <M-[> [{
 nmap <M-]> ]}
+nmap <C-[> za
+nmap <C-]> zo
 
 vmap <M-s> <esc>
 nnoremap <leader>h :wincmd h<CR>
@@ -72,7 +77,8 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader><leader> <C-^>
 
 " focus
-nnoremap <leader>= :Goyo<CR>
+nnoremap <leader>= :Goyo 80%+10%x100%<CR>
+nnoremap <leader>- :Goyo!<CR>
 
 " surround remap
 nmap S ys
@@ -114,9 +120,10 @@ set splitbelow
 set rnu
   
 " folding
-set foldmethod=syntax
-set foldlevelstart=99
-set foldopen-=block
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+autocmd BufReadPost,FileReadPost * normal zR
+nmap <esc> <nop>
 
 " theme
 colorscheme catppuccin
@@ -200,6 +207,7 @@ nnoremap <leader>t :e /tmp/main.go<CR>
 autocmd FileType markdown set conceallevel=0
 autocmd FileType markdown normal zR
 let g:markdown_recommended_style = 0
+let g:markdown_folding = 1
 
 " gq settings
 set textwidth=120

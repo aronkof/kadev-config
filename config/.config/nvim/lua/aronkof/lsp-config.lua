@@ -2,7 +2,7 @@ local cmp = require('cmp')
 local lspconfig = require('lspconfig')
 local opts = { noremap=true, silent=true }
 
-local servers = { 'gopls', 'rust_analyzer', 'tsserver', 'cssls' }
+local servers = { 'gopls', 'rust_analyzer', 'tsserver', 'cssls', 'kotlin_language_server' }
 
 vim.api.nvim_set_keymap('n', '[[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']]', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)

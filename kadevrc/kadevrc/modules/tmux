@@ -18,8 +18,6 @@ alias tmux-work-setup='tmux-rw proj:1 &&\
   tmux-w background &&\
   tmux-w kadevnotes &&\
   clear &&\
-  tmux select-window -t 4 &&\
-  tmux split && 
   tmux select-window -t 1'
 
 alias tmux-split='tmux split-window'

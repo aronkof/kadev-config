@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 ### LOAD MODULES ###
 source ~/kadevrc/modules/path
+source ~/kadevrc/modules/requester_token
 source ~/kadevrc/modules/audio
 source ~/kadevrc/modules/bashcommands
 source ~/kadevrc/modules/git

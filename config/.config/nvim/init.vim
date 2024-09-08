@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
   " aesthetics
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'itchyny/lightline.vim'
+  Plug 'folke/noice.nvim'
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'rcarriga/nvim-notify'
   " javascript
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'pangloss/vim-javascript'
@@ -37,8 +40,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   " treesitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'godlygeek/tabular'
-  Plug 'preservim/vim-markdown'
+  " markdown
+  " Plug 'godlygeek/tabular'
+  " Plug 'preservim/vim-markdown'
+  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+  " obsidian
+  Plug 'epwalsh/obsidian.nvim'
 call plug#end()
 
 lua require('aronkof/init')
@@ -61,7 +68,8 @@ imap <M-j> <esc>
 vmap <M-j> <esc>
 
 nmap <M-s> <nop>
-nmap = zz
+nmap - zz
+nnoremap <leader><leader> zz
 nmap { {k
 nmap } }j
 nmap <M-[> [{
@@ -70,11 +78,11 @@ nmap <C-[> za
 nmap <C-]> zo
 
 vmap <M-s> <esc>
+vmap $ g_
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader><leader> <C-^>
 
 " focus
 nnoremap <leader>= :Goyo 80%+10%x100%<CR>
@@ -120,9 +128,8 @@ set splitbelow
 set rnu
   
 " folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-autocmd BufReadPost,FileReadPost * normal zR
+set nofoldenable
+set foldmethod=manual
 nmap <esc> <nop>
 
 " theme
@@ -204,7 +211,7 @@ nnoremap <leader>t :e /tmp/main.go<CR>
 
 
 " Markdown setup
-autocmd FileType markdown set conceallevel=0
+autocmd FileType markdown set conceallevel=2
 autocmd FileType markdown normal zR
 let g:markdown_recommended_style = 0
 let g:markdown_folding = 1

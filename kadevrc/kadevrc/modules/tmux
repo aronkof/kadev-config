@@ -14,9 +14,9 @@ alias tmux-k='tmux kill-server'
 alias rtmux='tmux source-file ~/.tmux.conf'
 alias tmux-work-setup='tmux-rw proj:1 &&\
   tmux-w proj:2 &&\
-  tmux-w misc &&\
-  tmux-w background &&\
-  tmux-w kadevnotes &&\
+  tmux-w databases &&\
+  tmux-w cli &&\
+  tmux-w obsidian &&\
   clear &&\
   tmux select-window -t 1'
 

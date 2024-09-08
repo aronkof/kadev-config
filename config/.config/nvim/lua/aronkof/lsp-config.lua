@@ -67,6 +67,11 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
+    },
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy"
+      }
     }
   }
 end

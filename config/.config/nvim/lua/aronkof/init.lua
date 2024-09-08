@@ -1,6 +1,7 @@
 require('aronkof.lsp-config')
 require('aronkof.treesitter')
 require('aronkof.telescope')
+require('aronkof.noice')
+require('aronkof.obsidian')
 require('toggle_lsp_diagnostics').init()
-
 require('mason').setup()

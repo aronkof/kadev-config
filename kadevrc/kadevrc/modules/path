@@ -4,9 +4,20 @@ export PATH="$PATH:$HOME/projects/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/usr/local/go/bin"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/packages/jdtls:$PATH"
 export PATH="$HOME/.local/share/intellij/bin:$PATH"
 export PATH="$HOME/.local/share/kotlin_lsp/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/jdtls/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+
+export PSQL_EDITOR=/usr/bin/nvim
+
+# kauth -- kadev auth
+export KAUTH_KEY="XVjLXJrl_FkkN-QqixsOGINniuhUDUI4"
+export KAUTH_PW="e2p4nUnWKujcuZYGPcwCwAfNRwupMBo/GHUUeok="
+export IFD_USER="aron.koffler"
+export IFD_EMAIL="aron.koffler@ifood.com.br"

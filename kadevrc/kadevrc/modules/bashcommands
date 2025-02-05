@@ -26,3 +26,4 @@ alias winfolder='cd "/mnt/c/Users/aron.koffler/wsl"'
 
 # notebook brightness
 alias xlight='xrandr --output HDMI-0 --brightness'
+alias aoclight='xrandr --output DP-4 --brightness'

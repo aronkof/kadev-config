@@ -369,5 +369,7 @@ bindsym $mod+Ctrl+l exec mic_monitor_toggle
 
 for_window [class=".*"] border pixel 1
 
+exec_always --no-startup-id xset s off s noblank -dpms
+
 # gaps inner 10
 # gaps outer 10
